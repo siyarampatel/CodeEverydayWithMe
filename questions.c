@@ -54,3 +54,34 @@ int main(){
         printf("%d ",arr[i]);
     }
 }
+
+//Q3 => Find the 'Kth' max and min element of an array
+
+#include<stdio.h>
+int main(){
+    int n;
+    printf("Enter size of array: ");
+    scanf("%d",&n);
+    int arr[n];
+    printf("Enter elements in array:\n");
+    for(int i=0; i<n; i++){
+        scanf("%d",&arr[i]);
+    }
+    //Sorting of array
+    for(int i=0; i<n; i++){
+        for(int j=i+1; j<n; j++)
+        if(arr[i]>arr[j]){
+            int temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+        }
+    }
+    //for kth maximum number 
+        printf("For kth maximum and minimum number choose an number from 1 to %d: ",n);
+        int k; 
+        scanf("%d",&k);
+        printf("The %dth minimum is %d\n",k,arr[k-1]);
+        printf("The %dth maximum is %d",k,arr[n-k]);
+}
+
+
