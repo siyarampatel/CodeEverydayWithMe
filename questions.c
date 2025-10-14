@@ -83,5 +83,54 @@ int main(){
         printf("The %dth minimum is %d\n",k,arr[k-1]);
         printf("The %dth maximum is %d",k,arr[n-k]);
 }
+// Q4=> 4. Sort an array of 0s, 1s and 2s (Dutch National Flag Problem)
 
+#include<stdio.h>
+void swap(int *a,int *b){
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+void sortArray(int arr[] ,int n){
+    int low = 0;
+    int mid = 0;
+    int high = n-1;
+    while(mid<=high){
+        if(arr[mid]==0){
+            swap(&arr[low],&arr[mid]);
+            low++;
+            mid++;
+        }else if(arr[mid]==1){
+            mid++;
+        }else{
+            swap(&arr[mid],&arr[high]);
+            high--;
+        }
+    }
+}
+void printArray(int arr [],int n){
+        for(int i=0; i<n; i++){
+            printf("%d ",arr[i]);
+        }
+        printf("\n");
+    }
+int main(){
+    int arr [111];
+    int n;
+    printf("Enter no. of elements:");
+    scanf("%d",&n);
+    printf("Enter %d elements(only 0 or 1 or 2)\n",n);
+    for(int i=0; i<n; i++){
+        scanf("%d",&arr[i]);
+    }
+    printf("Before sorting\n");
+    printArray(arr,n);
+    sortArray(arr,n);
+    printf("After sorting\n");
+    printArray(arr,n);
+
+    return 0;
+
+}
 
