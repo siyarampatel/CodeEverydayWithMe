@@ -133,4 +133,34 @@ int main(){
     return 0;
 
 }
+// Q5=> Move all negative numbers to beginning and positive to end
 
+#include<stdio.h>
+int main(){
+    int arr [111];
+    int n;
+    printf("Enter no. of elements:");
+    scanf("%d",&n);
+    printf("Enter %d elements\n",n);
+    for(int i=0; i<n; i++){
+        scanf("%d",&arr[i]);
+    }
+    int j=0;
+    for(int i=0; i<n; i++){
+        if(arr[i]<0){
+            arr[j]=arr[i];
+        }
+        j++;
+    }
+    for(int i=0; i<n; i++){
+        if(arr[i]>0){
+            arr[j]=arr[i];
+        }
+        j++;
+    }
+
+    for(int i=0; i<n; i++){
+        printf("%d ",arr[i]);
+    }
+
+}
