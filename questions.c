@@ -164,3 +164,64 @@ int main(){
     }
 
 }
+
+//Q6 => Find Union and Intersection of two arrays
+
+#include<stdio.h>
+int main(){
+    int n;
+    int a1[100];
+    int a2[100];
+    int a3[100];
+    int a4[100];
+    int i,j,k=0,l=0;
+    int found;
+    printf("Enter size of arrays: ");
+    scanf("%d",&n);
+    printf("Enter element in first array: \n");
+    for(int i=0; i<n; i++){
+        scanf("%d",&a1[i]);
+    }
+    printf("Enter elements in second array: \n");
+    for(int i=0; i<n; i++){
+        scanf("%d",&a2[i]);
+    }
+  //Union of array
+    for(i=0; i<n; i++){
+        a3[k++]=a1[i];              //copying of first array in a3 
+    }
+    for(int i=0; i<n; i++){
+        found = 0;
+        for(int j=0; j<k; j++){     //comparing elements of second array and first if equal then ignore them
+            if(a2[i]==a3[i]){
+                found = 1;
+                break;
+            }
+
+        }
+        if(found = 0){
+            a3[k++]=a2[i];           //inserting elements of a2 which are different 
+        }
+    }
+
+    printf("The union of arrays is: ");
+    for(i=0; i<n; i++){
+        printf("%d ",a3[i]);
+    }
+    printf("\n");
+
+    //Intersection of array
+    for(i=0; i<n; i++){
+        for(j=0; j<n; j++){
+            if(a1[i] == a2[j]){
+                a4[l++]=a1[i];
+                break;
+            }
+        }
+    }
+printf("The intersection of arrays is: ");
+    for(i=0; i<n; i++){
+        printf("%d ",a4[i]);
+    }
+    printf("\n");
+}
