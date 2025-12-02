@@ -1,0 +1,58 @@
+//Q- Print diagonals of a matrix
+
+class Qustion1{
+     static void diagonal(int arr[][]){
+        for(int i=0; i<3; i++){
+            for(int j=0; j<3; j++){
+                if(i==j){
+                    System.out.println(arr[i][j]);
+                }
+            }
+        }
+
+    }
+    public static void main(String [] args){
+        int arr[][]={{1,2,3},{4,5,6},{7,8,9}};
+        diagonal(arr);
+    }
+}
+
+//Q- Transpose of a matrix
+class question2{
+     static void transpose(int arr[][]){
+        for(int i=0; i<3; i++){
+            for(int j=0; j<3; j++){
+                    System.out.print(arr[j][i]);
+            }
+                            System.out.println();
+        }
+
+    }
+    public static void main(String [] args){
+        int arr[][]={{1,2,3},
+                     {4,5,6},
+                     {7,8,9}};
+        transpose(arr);
+    }
+}
+//Q- Rotate matrix by 90 degrees clockwise
+class question3{
+    static void Ninty_degree(int arr[][]){
+    System.out.println("Ninty Degree Rotation");
+    for(int j=0; j<3; j++){
+    for(int i=2; i>=0; i--){
+        
+            System.out.print(arr[i][j]);
+    }
+   
+    System.out.println();
+    }
+    
+    }
+    public static void main(String [] args){
+         int arr[][]={{1,2,3},
+                     {4,5,6},
+                     {7,8,9}};
+                   Ninty_degree(arr);
+    }
+}
